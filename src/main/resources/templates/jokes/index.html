@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Joke app</title>
+    <link rel="stylesheet" href="style.css" >
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+
+        body{
+            background-color: #d3d3d3;
+        }
+
+        .container{
+            margin: 10%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .container .joke{
+            height: 100px;
+            font-size: 1.2rem;
+            color: darkslategrey;
+            text-align: center;
+
+        }
+
+        .btn{
+            margin: 50px auto;
+            padding: 5px;
+            box-shadow: 0px 0px 4px rgba(75, 94, 94, 0.74);
+            cursor: pointer;
+            transition: 0.1s ease-in-out;
+
+        }
+
+        .btn:active{
+            transform: translateY(-2px);
+        }
+
+        .btn a{
+            text-decoration: none;
+            font-size: small;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 th:text="${joke}" class="joke" >joke</h2>
+         <button class="btn"><a href="/" th:href="@{/}" >more jokes</a></button>
+    </div>
+</body>
+</html>
